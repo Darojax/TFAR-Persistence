@@ -1,0 +1,102 @@
+# TFAR Persistence
+
+TFAR Persistence remembers personal Task Force Arrowhead Radio settings across
+missions and Arma sessions. A conservative respawn helper verifies TFAR's own
+restoration and corrects only settings that remain different.
+
+The first MVP supports:
+
+- instanced short-range radios in the player's inventory;
+- the player's long-range backpack radio;
+- active channel, main/additional volume, stereo routing, additional channel, speakers, and
+  channel frequencies;
+- named, cross-session radio setups created through an in-game preset manager;
+- deliberate, manual restoration to matching radios currently carried;
+- manual active-profile save and restore actions through unbound CBA keybinds.
+
+Vehicle radios are intentionally not included because their settings belong to
+the vehicle and may be shared by multiple crew members.
+
+## Requirements
+
+- Arma 3
+- CBA_A3
+- ACE3
+- Task Force Arrowhead Radio (TFAR)
+
+## Build
+
+Install [HEMTT](https://hemtt.dev/) and run:
+
+```text
+hemtt check
+hemtt build
+```
+
+The built mod is written to `.hemttout/build`.
+
+## In-game setup
+
+Frequency persistence and notifications are per-player options under **Options
+> Addon Options > TFAR Persistence**. These options are local and do not create
+server traffic. Named-profile saving and restoration are always manual.
+
+The primary controls are under **ACE Self Interaction > Radios > Settings**:
+
+- **Show Currently Active Profile Settings (profile name)** displays the active
+  profile for ten seconds.
+- **Restore Settings > Confirm** immediately restores the active profile
+  to matching radios currently carried.
+- **Save Settings > Confirm** updates the active profile.
+- **Manage Profiles** opens the interface used to create, activate and restore,
+  inspect, rename, and delete profiles.
+
+Every player starts with a profile named **Default**. Creating or restoring a
+named profile makes that profile active, so all top-level save, show, and
+restore behavior uses its name and settings. **Default** is not
+permanent: it can be renamed or deleted once another profile exists. The
+manager always retains at least one profile because saving and manual restore
+need an active profile.
+
+The active profile is labelled **(Active)** and shown in `#F7F4AA`. Selecting a
+profile shows its saved radios, main and alternate channels, frequencies, and
+volume. **Set active** asks for confirmation, makes the selection active, and
+restores it to matching radios. **Create new** opens a child name dialog over
+the manager and saves the current radio settings. **Rename** opens the same
+compact child dialog without changing the profile's settings. **Delete** works
+for any profile except the last remaining one.
+
+The confirmation steps and notification-based saved-settings display follow the
+interaction pattern used by ACRE Persistence.
+
+Equivalent unbound CBA keybinds remain available under
+**Options > Controls > Configure Addons** as an accessibility fallback.
+
+The named profiles are versioned and stored in the local player's
+`profileNamespace`. A setup includes every supported handheld radio
+currently carried plus the player's backpack radio. It contains radio base
+classes and user-facing radio properties, never TFAR instance IDs, player
+ownership IDs, or encryption codes.
+
+Profile restoration occurs only after a deliberate player action. It affects
+matching radios currently carried and then ends. Missing radios are reported
+and left unchanged; no request remains pending for radios acquired later. This
+prevents received, loaned, captured, or specially configured radios from being
+silently changed.
+
+Separately, the respawn helper keeps a mission-only snapshot at death. Eight
+seconds after an actual respawn it compares the new radios with that snapshot,
+allowing TFAR and mission templates to finish first. It retries briefly if the
+radios have not arrived and restores only matched radios whose settings still
+differ. Any player radio adjustment during that window cancels the helper, so
+it never competes with deliberate player input. This snapshot is not written to
+a named profile and does not apply on join or ordinary loadout changes.
+
+## Current status
+
+This is an early MVP and needs multiplayer testing with the unit's real radio
+and loadout scripts. See [docs/TESTING.md](docs/TESTING.md) for the test matrix.
+
+## License
+
+[MIT](LICENSE)
