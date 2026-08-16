@@ -36,5 +36,4 @@ if (toLowerANSI _activeName isEqualTo toLowerANSI _name) then {
 _store set [2, _profiles];
 [_store] call TFARP_fnc_writeStore;
 call TFARP_fnc_refreshPresetDialog;
-[format ["Setup '%1' deleted", _name]] call TFARP_fnc_notify;
 true

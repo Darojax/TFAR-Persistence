@@ -18,9 +18,7 @@ if (_showNotification) then {
     if (_configured <= 0) then {
         ["No currently carried radios matched this profile"] call TFARP_fnc_notify;
     } else {
-        if (_configured >= _total) then {
-            [format ["Radio profile restored to %1 radio(s)", _configured]] call TFARP_fnc_notify;
-        } else {
+        if (_configured < _total) then {
             [format [
                 "Restored %1 of %2 saved radios; missing radios were left unchanged",
                 _configured,

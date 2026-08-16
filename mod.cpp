@@ -1,0 +1,9 @@
+name = "TFAR Persistence";
+author = "Darojax";
+actionName = "GitHub";
+action = "https://github.com/Darojax/TFAR-Persistence";
+description = "Save, manage, and restore personal TFAR radio profiles across Arma sessions.";
+tooltip = "TFAR Persistence";
+tooltipOwned = "TFAR Persistence";
+overview = "Personal, named TFAR radio profiles with manual restore and conservative respawn recovery.";
+overviewText = "TFAR Persistence";

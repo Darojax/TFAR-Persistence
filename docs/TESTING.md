@@ -14,12 +14,14 @@ volume, stereo side, additional channel, and speakers.
 | Show active settings through ACE | **Show Currently Active Profile Settings (profile name)** displays every saved supported radio for ten seconds |
 | Restore active settings through ACE | **Restore Settings > Confirm** immediately restores matching carried radios |
 | Inspect ACE **Radios > Settings** | No named-profile list or automatic-saving toggle appears there |
-| Press **Create new** in the manager | A compact child popup remains above the manager, asks for a profile name, and saves the current radios |
-| Select a profile and press **Rename** | A compact popup asks for the new name; settings and active status are retained |
+| Press **Create new** in the manager | A compact name layer appears over the still-visible manager, asks for a profile name, and saves the current radios |
+| Try to create a profile using an existing name with different letter case | Creation is rejected with an explanatory message; the existing profile is unchanged |
+| Select a profile and press **Rename** | The embedded name layer asks for the new name; settings and active status are retained |
 | Select an inactive profile and press **Set active** | It gains **(Active)** and `#F7F4AA`; the old profile loses both |
+| Double-click an inactive profile | It becomes active and restores exactly as if **Set active** were pressed |
 | Adjust a radio after saving a profile | The named profile does not change until the player manually saves it |
-| Select a profile in the manager | Saved radios, main/alternate channels, frequencies, and volumes appear in the detail area |
-| Press **Set active** and confirm | The profile becomes active and is restored to matching carried radios |
+| Hover a profile in the manager | A condensed tooltip shows one line per radio with main/additional channel, frequency, volume, stereo, speaker, and active-radio state |
+| Press **Set active** | The profile immediately becomes active and is restored to matching carried radios without another confirmation |
 | Join a mission with a saved active profile | No settings restore until the player manually confirms a restore |
 | Save and restore a named setup | The selected named setup restores |
 | Restart Arma before restoring a named setup | The setup remains available and restores |
