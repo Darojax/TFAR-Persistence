@@ -1,8 +1,8 @@
 class CfgPatches {
     class tfarp_main {
-        name = "TFAR Persistence";
+        name = "TFAR Radio Settings Save & Restore";
         author = "Darojax";
-        url = "https://github.com/Darojax/TFAR-Persistence";
+        url = "https://github.com/Darojax/TFAR-Radio-Settings-Save-and-Restore";
         units[] = {};
         weapons[] = {};
         requiredVersion = 2.14;
@@ -128,7 +128,7 @@ class TFARP_RscPresetDialog {
         };
         class Frame: RscFrame {
             idc = -1;
-            text = "TFAR Persistence - Radio Profiles";
+            text = "TFAR - Radio Settings Profiles";
             x = "safeZoneX + safeZoneW * 0.35";
             y = "safeZoneY + safeZoneH * 0.29";
             w = "safeZoneW * 0.30";
@@ -209,7 +209,7 @@ class TFARP_RscPresetDialog {
         };
         class NameFrame: RscFrame {
             idc = 9517;
-            text = "TFAR Persistence";
+            text = "TFAR - Radio Settings Profiles";
             x = "safeZoneX + safeZoneW * 0.39";
             y = "safeZoneY + safeZoneH * 0.40";
             w = "safeZoneW * 0.22";

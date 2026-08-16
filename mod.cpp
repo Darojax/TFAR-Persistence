@@ -1,9 +1,9 @@
-name = "TFAR Persistence";
+name = "TFAR Radio Settings Save & Restore";
 author = "Darojax";
 actionName = "GitHub";
-action = "https://github.com/Darojax/TFAR-Persistence";
-description = "Save, manage, and restore personal TFAR radio profiles across Arma sessions.";
-tooltip = "TFAR Persistence";
-tooltipOwned = "TFAR Persistence";
-overview = "Personal, named TFAR radio profiles with deliberate manual saving and restoration.";
-overviewText = "TFAR Persistence";
+action = "https://github.com/Darojax/TFAR-Radio-Settings-Save-and-Restore";
+description = "Save and manually restore personal TFAR radio settings across Arma sessions.";
+tooltip = "TFAR Radio Settings Save & Restore";
+tooltipOwned = "TFAR Radio Settings Save & Restore";
+overview = "Named personal TFAR radio settings with deliberate manual saving and restoration.";
+overviewText = "TFAR Radio Settings Save & Restore";

@@ -1,14 +1,14 @@
 # Multiplayer test matrix
 
-Use a dedicated server with CBA_A3, TFAR, and TFAR Persistence loaded on the
-client. Start with TFAR Persistence's default addon settings.
+Use a dedicated server with CBA_A3, TFAR, and TFAR Radio Settings Save & Restore
+loaded on the client. Start with the addon's default settings.
 
 For each case, configure clearly recognizable values for channel, frequency,
 volume, stereo side, additional channel, and speakers.
 
 | Case | Expected result |
 | --- | --- |
-| Open ACE Self Interaction | **Radios > Settings** contains TFAR Persistence controls |
+| Open ACE Self Interaction | **Radios > Settings** contains TFAR Radio Settings Save & Restore controls |
 | First use, before creating a profile | **Default (Active)** appears in `#F7F4AA` in the manager |
 | Save active settings through ACE | **Save Settings > Confirm** updates the active profile |
 | Show active settings through ACE | **Show Currently Active Profile Settings (profile name)** displays every saved supported radio for ten seconds |
@@ -30,7 +30,7 @@ volume, stereo side, additional channel, and speakers.
 | Receive another player's radio | Its settings remain unchanged until the receiving player deliberately restores a profile |
 | Replace the loadout with a new radio of the same model | Its settings remain unchanged until the player manually restores again |
 | Adjust a restored radio manually | The addon does not reapply and overwrite the player's adjustment |
-| Die and respawn | TFAR Persistence performs no automatic radio save, comparison, or restoration |
+| Die and respawn | TFAR Radio Settings Save & Restore performs no automatic radio save, comparison, or restoration |
 | Change to a different handheld model | No unrelated preset is applied |
 | Carry two handhelds of the same base type | Each radio matches by stable inventory order |
 | Enter a vehicle with an LR radio | Vehicle radio remains unchanged |

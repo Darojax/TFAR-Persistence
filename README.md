@@ -1,8 +1,8 @@
-# TFAR Persistence
+# TFAR Radio Settings Save & Restore
 
-TFAR Persistence remembers personal Task Force Arrowhead Radio settings across
-missions and Arma sessions. Saving and restoration occur only when deliberately
-requested by the player.
+TFAR Radio Settings Save & Restore remembers personal Task Force Arrowhead Radio
+settings across missions and Arma sessions. Saving and restoration occur only
+when deliberately requested by the player.
 
 The first MVP supports:
 
@@ -27,11 +27,11 @@ the vehicle and may be shared by multiple crew members.
 ## Installation
 
 1. Download the latest release archive from GitHub.
-2. Extract it into an `@TFAR-Persistence` folder in an Arma 3 mod directory.
-3. Enable TFAR Persistence together with CBA_A3, ACE3, and TFAR.
+2. Extract it into an `@TFAR-Radio-Settings-Save-and-Restore` folder in an Arma 3 mod directory.
+3. Enable TFAR Radio Settings Save & Restore together with CBA_A3, ACE3, and TFAR.
 
-TFAR Persistence stores profiles locally and performs its work on the player
-client. A server does not need to execute its persistence logic, although
+TFAR Radio Settings Save & Restore stores profiles locally and performs its work
+on the player client. A server does not need to execute its profile logic, although
 communities using signature verification should install the included public
 key or distribute the addon through their normal modset.
 
@@ -49,7 +49,7 @@ The built mod is written to `.hemttout/build`.
 ## In-game setup
 
 Frequency persistence and notifications are per-player options under **Options
-> Addon Options > TFAR Persistence**. These options are local and do not create
+> Addon Options > TFAR Radio Settings Save & Restore**. These options are local and do not create
 server traffic. Named-profile saving and restoration are always manual.
 
 The primary controls are under **ACE Self Interaction > Radios > Settings**:
@@ -101,7 +101,8 @@ silently changed.
 
 ## Current status
 
-Version 0.1.1 is the manual-only public release. See
+Version 0.2.0 introduces the clearer TFAR Radio Settings Save & Restore name
+while retaining existing saved profiles and internal compatibility. See
 [docs/TESTING.md](docs/TESTING.md) for the multiplayer and regression test
 matrix.
 

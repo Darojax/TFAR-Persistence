@@ -1,7 +1,7 @@
 if (!hasInterface) exitWith {};
 
 [
-    "TFAR Persistence",
+    "TFAR Radio Settings Save & Restore",
     "TFARP_openPresetManager",
     ["Open saved radio setups", "Create, restore, and delete named cross-session radio setups."],
     { call TFARP_fnc_openPresetDialog; },
@@ -10,7 +10,7 @@ if (!hasInterface) exitWith {};
 ] call CBA_fnc_addKeybind;
 
 [
-    "TFAR Persistence",
+    "TFAR Radio Settings Save & Restore",
     "TFARP_saveCurrent",
     ["Save current settings to active profile", "Immediately update the selected named radio profile."],
     { [true] call TFARP_fnc_saveCurrent; },
@@ -19,7 +19,7 @@ if (!hasInterface) exitWith {};
 ] call CBA_fnc_addKeybind;
 
 [
-    "TFAR Persistence",
+    "TFAR Radio Settings Save & Restore",
     "TFARP_restoreSaved",
     ["Restore active radio profile", "Manually restore the selected named profile to radios currently carried."],
     { [] spawn TFARP_fnc_confirmRestoreActive; },

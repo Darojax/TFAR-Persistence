@@ -6,7 +6,7 @@ if (!_available) exitWith {
 
 private _confirmed = [
     format ["Restore '%1' to the radios you are currently carrying?", _name],
-    "TFAR Persistence",
+    "TFAR Radio Settings Save & Restore",
     true,
     true
 ] call BIS_fnc_guiMessage;
