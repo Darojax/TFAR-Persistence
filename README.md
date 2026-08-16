@@ -1,5 +1,9 @@
 # TFAR Radio Settings Save & Restore
 
+<p align="center">
+  <img src="assets/logo.png" alt="TFAR Radio Settings Save & Restore emblem" width="360">
+</p>
+
 TFAR Radio Settings Save & Restore remembers personal Task Force Arrowhead Radio
 settings across missions and Arma sessions. Saving and restoration occur only
 when deliberately requested by the player.
@@ -101,11 +105,14 @@ silently changed.
 
 ## Current status
 
-Version 0.2.0 introduces the clearer TFAR Radio Settings Save & Restore name
-while retaining existing saved profiles and internal compatibility. See
+Version 0.2.1 adds the project emblem to the Arma launcher, content browser,
+release package, and documentation. Existing saved profiles and internal
+compatibility remain unchanged. See
 [docs/TESTING.md](docs/TESTING.md) for the multiplayer and regression test
 matrix.
 
 ## License
 
-[MIT](LICENSE)
+The addon code is licensed under the [MIT License](LICENSE). The logo artwork is
+separately licensed under APL-SA; see [ARTWORK_LICENSE.md](ARTWORK_LICENSE.md)
+for attribution, modification, and no-endorsement details.
