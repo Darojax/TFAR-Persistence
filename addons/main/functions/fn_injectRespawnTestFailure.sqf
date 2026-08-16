@@ -67,7 +67,7 @@ TFARP_restoring = false;
 if (_changed > 0) then {
     TFARP_testFailNextRespawn = false;
     [format [
-        "TEST: simulated failed TFAR restoration on %1 radio(s); recovery verification is now running",
+        "TEST: simulated failed TFAR restoration on %1 radio(s)",
         _changed
     ]] call TFARP_fnc_notify;
 };

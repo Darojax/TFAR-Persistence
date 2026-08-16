@@ -64,3 +64,22 @@ that every pre-death setting—not only volume—is unchanged afterward.
 The hook disarms itself immediately after a mismatch is successfully injected.
 If no matching radio is available yet, it remains armed while the normal retry
 window continues. Run the command again for each additional test respawn.
+
+For a visible, two-stage test, run this command before dying instead:
+
+```sqf
+call TFARP_fnc_armRespawnMismatchTest;
+```
+
+The next respawn receives the same deliberate volume mismatch, but automatic
+recovery stops and leaves it in place. Inspect the radio to confirm that it is
+incorrect, then run:
+
+```sqf
+call TFARP_fnc_runRespawnRecoveryTest;
+```
+
+This invokes TFAR Persistence restoration against the retained death snapshot,
+immediately recaptures the live radio state, and reports `TEST PASS` only when
+every matching radio verifies correctly. The two commands can be repeated for
+additional deaths without restarting Arma.

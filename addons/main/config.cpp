@@ -24,6 +24,7 @@ class CfgFunctions {
             file = "\z\tfarp\addons\main\functions";
 
             class armRespawnTest {};
+            class armRespawnMismatchTest {};
             class captureCurrent {};
             class buildProfileTooltip {};
             class closeNameDialog {};
@@ -44,6 +45,7 @@ class CfgFunctions {
             class restoreNamedPreset {};
             class restoreSaved {};
             class restoreSnapshot {};
+            class runRespawnRecoveryTest {};
             class saveCurrent {};
             class saveNamedPreset {};
             class renameSelectedPreset {};
