@@ -5,11 +5,6 @@ params [
 
 if (_snapshot isEqualTo [] || {(_snapshot param [0, 0]) isNotEqualTo 1}) exitWith { false };
 
-// A deliberate manual restore always takes precedence over the short respawn
-// verification window.
-TFARP_respawnPlayerAdjusted = true;
-TFARP_respawnAwaiting = false;
-
 private _restored = [_snapshot, []] call TFARP_fnc_restoreSnapshot;
 private _configured = count _restored;
 private _total = count (_snapshot param [2, []]) + count (_snapshot param [3, []]);

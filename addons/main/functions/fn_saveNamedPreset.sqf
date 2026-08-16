@@ -20,9 +20,6 @@ if (_existingIndex >= 0) exitWith {
     false
 };
 
-TFARP_respawnPlayerAdjusted = true;
-TFARP_respawnAwaiting = false;
-
 private _snapshot = [] call TFARP_fnc_captureCurrent;
 if (_snapshot isEqualTo []) exitWith { false };
 if ((_snapshot param [2, []]) isEqualTo [] && {(_snapshot param [3, []]) isEqualTo []}) exitWith {

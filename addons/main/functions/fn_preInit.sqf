@@ -17,7 +17,3 @@
 ] call CBA_fnc_addSetting;
 
 TFARP_restoring = false;
-TFARP_respawnSnapshot = [];
-TFARP_respawnAwaiting = false;
-TFARP_respawnGeneration = 0;
-TFARP_respawnPlayerAdjusted = false;

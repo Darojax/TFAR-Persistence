@@ -1,8 +1,8 @@
 # TFAR Persistence
 
 TFAR Persistence remembers personal Task Force Arrowhead Radio settings across
-missions and Arma sessions. A conservative respawn helper verifies TFAR's own
-restoration and corrects only settings that remain different.
+missions and Arma sessions. Saving and restoration occur only when deliberately
+requested by the player.
 
 The first MVP supports:
 
@@ -99,17 +99,9 @@ and left unchanged; no request remains pending for radios acquired later. This
 prevents received, loaned, captured, or specially configured radios from being
 silently changed.
 
-Separately, the respawn helper keeps a mission-only snapshot at death. Eight
-seconds after an actual respawn it compares the new radios with that snapshot,
-allowing TFAR and mission templates to finish first. It retries briefly if the
-radios have not arrived and restores only matched radios whose settings still
-differ. Any player radio adjustment during that window cancels the helper, so
-it never competes with deliberate player input. This snapshot is not written to
-a named profile and does not apply on join or ordinary loadout changes.
-
 ## Current status
 
-Version 0.1.0 is the initial public release. See
+Version 0.1.1 is the manual-only public release. See
 [docs/TESTING.md](docs/TESTING.md) for the multiplayer and regression test
 matrix.
 
