@@ -5,7 +5,7 @@
 </p>
 
 TFAR Radio Settings Save & Restore remembers personal Task Force Arrowhead Radio
-settings across missions and Arma sessions. Saving and restoration is done via ACE Self Interact.
+settings across missions and Arma sessions. Saving and Restoring is done via ACE Self Interact.
 
 This mod:
 
