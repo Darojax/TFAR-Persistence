@@ -5,25 +5,19 @@
 </p>
 
 TFAR Radio Settings Save & Restore remembers personal Task Force Arrowhead Radio
-settings across missions and Arma sessions. Saving and restoration occur only
-when deliberately requested by the player.
+settings across missions and Arma sessions. Saving and restoration is done via ACE Self Interact.
 
-The first MVP supports:
+This mod:
 
-- instanced short-range radios in the player's inventory;
-- the player's long-range backpack radio;
-- active channel, main/additional volume, stereo routing, additional channel, speakers, and
-  channel frequencies;
-- named, cross-session radio setups created through an in-game preset manager;
-- deliberate, manual restoration to matching radios currently carried;
-- manual active-profile save and restore actions through unbound CBA keybinds.
+* Saves and restores active channels, main and additional channel volumes, stereo routing, additional channels, speaker states, and channel frequencies for all matching carried radios.
+* Allows each player to create named profiles for different combinations of radio settings.
+* Provides CBA keybind actions for manually saving to or restoring from the active profile; both are unbound by default.
 
-Vehicle radios are intentionally not included because their settings belong to
-the vehicle and may be shared by multiple crew members.
+Vehicle radios are currently not included.
 
 ## Requirements
 
-- Arma 3
+- Arma3
 - CBA_A3
 - ACE3
 - Task Force Arrowhead Radio (TFAR)
@@ -53,8 +47,9 @@ The built mod is written to `.hemttout/build`.
 ## In-game setup
 
 Frequency persistence and notifications are per-player options under **Options
+
 > Addon Options > TFAR Radio Settings Save & Restore**. These options are local and do not create
-server traffic. Named-profile saving and restoration are always manual.
+> server traffic. Named-profile saving and restoration are always manual.
 
 The primary controls are under **ACE Self Interaction > Radios > Settings**:
 
@@ -65,28 +60,6 @@ The primary controls are under **ACE Self Interaction > Radios > Settings**:
 - **Save Settings > Confirm** updates the active profile.
 - **Manage Profiles** opens the interface used to create, activate and restore,
   inspect, rename, and delete profiles.
-
-Every player starts with a profile named **Default**. Creating or restoring a
-named profile makes that profile active, so all top-level save, show, and
-restore behavior uses its name and settings. **Default** is not
-permanent: it can be renamed or deleted once another profile exists. The
-manager always retains at least one profile because saving and manual restore
-need an active profile.
-
-The active profile is labelled **(Active)** and shown in `#F7F4AA`. Hovering a
-profile shows a condensed tooltip with one line per saved radio, including its
-main and additional channel, frequency, volume, stereo, speaker, and active
-radio state. **Set active** immediately makes the selection active and restores
-it to matching carried radios; double-clicking a profile does the same thing.
-**Create new** opens a compact name layer over the still-visible manager and
-saves the current radio settings. Profile names are unique without regard to
-letter case, and duplicate creation is rejected rather than overwriting saved
-settings. **Rename** uses the same embedded layer without changing the
-profile's settings. **Delete** works for any profile except the last remaining
-one.
-
-The confirmation steps and notification-based saved-settings display follow the
-interaction pattern used by ACRE Persistence.
 
 Equivalent unbound CBA keybinds remain available under
 **Options > Controls > Configure Addons** as an accessibility fallback.
@@ -102,17 +75,3 @@ matching radios currently carried and then ends. Missing radios are reported
 and left unchanged; no request remains pending for radios acquired later. This
 prevents received, loaned, captured, or specially configured radios from being
 silently changed.
-
-## Current status
-
-Version 0.2.1 adds the project emblem to the Arma launcher, content browser,
-release package, and documentation. Existing saved profiles and internal
-compatibility remain unchanged. See
-[docs/TESTING.md](docs/TESTING.md) for the multiplayer and regression test
-matrix.
-
-## License
-
-The addon code is licensed under the [MIT License](LICENSE). The logo artwork is
-separately licensed under APL-SA; see [ARTWORK_LICENSE.md](ARTWORK_LICENSE.md)
-for attribution, modification, and no-endorsement details.
