@@ -49,8 +49,6 @@ class CfgFunctions {
             class showActiveSnapshot {};
             class showSnapshot {};
             class submitNameDialog {};
-            class compareSnapshot {};
-            class verifyRespawnRestore {};
             class writeStore {};
         };
     };

@@ -30,9 +30,7 @@ volume, stereo side, additional channel, and speakers.
 | Receive another player's radio | Its settings remain unchanged until the receiving player deliberately restores a profile |
 | Replace the loadout with a new radio of the same model | Its settings remain unchanged until the player manually restores again |
 | Adjust a restored radio manually | The addon does not reapply and overwrite the player's adjustment |
-| Ordinary death and respawn, native TFAR succeeds | The helper verifies the radio state and makes no change |
-| Ordinary death and respawn, native TFAR leaves a mismatch | After TFAR's processing window, only mismatched pre-death settings are corrected |
-| Adjust a radio before the respawn check runs | The helper cancels and does not overwrite the player's input |
+| Die and respawn | TFAR Persistence performs no automatic radio save, comparison, or restoration |
 | Change to a different handheld model | No unrelated preset is applied |
 | Carry two handhelds of the same base type | Each radio matches by stable inventory order |
 | Enter a vehicle with an LR radio | Vehicle radio remains unchanged |
@@ -43,4 +41,4 @@ volume, stereo side, additional channel, and speakers.
 | Try to delete the last remaining profile | Deletion is blocked and a message explains that another profile must be created first |
 
 Capture the client RPT when a case fails. Include the TFAR version, loadout
-script timing, radio class names, and whether the respawn helper intervened.
+script timing, and radio class names.
