@@ -10,10 +10,11 @@ lbClear _list;
 (call TFARP_fnc_loadStore) params ["", ["_activeName", "Default", [""]], ["_profiles", [], [[]]]];
 
 {
-    _x params [["_name", "", [""]]];
+    _x params [["_name", "", [""]], ["_snapshot", [], [[]]]];
     private _isActive = toLowerANSI _name isEqualTo toLowerANSI _activeName;
     private _row = _list lbAdd format ["%1%2", _name, ["", " (Active)"] select _isActive];
     _list lbSetData [_row, _name];
+    _list lbSetTooltip [_row, [_snapshot] call TFARP_fnc_buildProfileTooltip];
     if (_isActive) then {
         _list lbSetColor [_row, [0.968627, 0.956863, 0.666667, 1]];
         _list lbSetSelectColor [_row, [0, 0, 0, 1]];
@@ -29,4 +30,3 @@ if (_previousName isNotEqualTo "") then {
 if ((lbSize _list) > 0) then {
     _list lbSetCurSel _selection;
 };
-call TFARP_fnc_refreshPresetDetails;

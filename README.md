@@ -24,6 +24,17 @@ the vehicle and may be shared by multiple crew members.
 - ACE3
 - Task Force Arrowhead Radio (TFAR)
 
+## Installation
+
+1. Download the latest release archive from GitHub.
+2. Extract it into an `@TFAR-Persistence` folder in an Arma 3 mod directory.
+3. Enable TFAR Persistence together with CBA_A3, ACE3, and TFAR.
+
+TFAR Persistence stores profiles locally and performs its work on the player
+client. A server does not need to execute its persistence logic, although
+communities using signature verification should install the included public
+key or distribute the addon through their normal modset.
+
 ## Build
 
 Install [HEMTT](https://hemtt.dev/) and run:
@@ -58,13 +69,17 @@ permanent: it can be renamed or deleted once another profile exists. The
 manager always retains at least one profile because saving and manual restore
 need an active profile.
 
-The active profile is labelled **(Active)** and shown in `#F7F4AA`. Selecting a
-profile shows its saved radios, main and alternate channels, frequencies, and
-volume. **Set active** asks for confirmation, makes the selection active, and
-restores it to matching radios. **Create new** opens a child name dialog over
-the manager and saves the current radio settings. **Rename** opens the same
-compact child dialog without changing the profile's settings. **Delete** works
-for any profile except the last remaining one.
+The active profile is labelled **(Active)** and shown in `#F7F4AA`. Hovering a
+profile shows a condensed tooltip with one line per saved radio, including its
+main and additional channel, frequency, volume, stereo, speaker, and active
+radio state. **Set active** immediately makes the selection active and restores
+it to matching carried radios; double-clicking a profile does the same thing.
+**Create new** opens a compact name layer over the still-visible manager and
+saves the current radio settings. Profile names are unique without regard to
+letter case, and duplicate creation is rejected rather than overwriting saved
+settings. **Rename** uses the same embedded layer without changing the
+profile's settings. **Delete** works for any profile except the last remaining
+one.
 
 The confirmation steps and notification-based saved-settings display follow the
 interaction pattern used by ACRE Persistence.
@@ -94,8 +109,9 @@ a named profile and does not apply on join or ordinary loadout changes.
 
 ## Current status
 
-This is an early MVP and needs multiplayer testing with the unit's real radio
-and loadout scripts. See [docs/TESTING.md](docs/TESTING.md) for the test matrix.
+Version 0.1.0 is the initial public release. See
+[docs/TESTING.md](docs/TESTING.md) for the multiplayer and regression test
+matrix.
 
 ## License
 

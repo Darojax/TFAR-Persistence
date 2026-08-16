@@ -40,5 +40,4 @@ private _newIndex = _profiles findIf {(_x param [0, ""]) isEqualTo _newName};
 if (_newIndex >= 0) then {
     _list lbSetCurSel _newIndex;
 };
-[format ["Profile '%1' renamed to '%2'", _oldName, _newName]] call TFARP_fnc_notify;
 true

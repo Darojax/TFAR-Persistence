@@ -10,7 +10,7 @@
 [
     "TFARP_notifications",
     "CHECKBOX",
-    ["Show notifications", "Show a small message after manual saves and restores."],
+    ["Show notifications", "Show informational, warning, and error messages from TFAR Persistence."],
     "TFAR Persistence",
     true,
     false

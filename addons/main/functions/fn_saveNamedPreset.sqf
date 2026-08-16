@@ -9,6 +9,17 @@ if (_name isEqualTo "") exitWith {
     false
 };
 
+private _store = call TFARP_fnc_loadStore;
+_store params ["", "", ["_profiles", [], [[]]]];
+private _existingIndex = _profiles findIf {
+    toLowerANSI (_x param [0, ""]) isEqualTo toLowerANSI _name
+};
+if (_existingIndex >= 0) exitWith {
+    private _existingName = (_profiles select _existingIndex) param [0, _name];
+    [format ["A radio profile named '%1' already exists. Choose a different name.", _existingName]] call TFARP_fnc_notify;
+    false
+};
+
 TFARP_respawnPlayerAdjusted = true;
 TFARP_respawnAwaiting = false;
 
@@ -19,19 +30,10 @@ if ((_snapshot param [2, []]) isEqualTo [] && {(_snapshot param [3, []]) isEqual
     false
 };
 
-private _store = call TFARP_fnc_loadStore;
-_store params ["", "", ["_profiles", [], [[]]]];
-
-private _index = _profiles findIf {toLowerANSI (_x param [0, ""]) isEqualTo toLowerANSI _name};
-if (_index < 0) then {
-    _profiles pushBack [_name, _snapshot];
-} else {
-    _profiles set [_index, [_name, _snapshot]];
-};
+_profiles pushBack [_name, _snapshot];
 
 _store set [1, _name];
 _store set [2, _profiles];
 [_store] call TFARP_fnc_writeStore;
 call TFARP_fnc_refreshPresetDialog;
-[format ["Profile '%1' saved and selected", _name]] call TFARP_fnc_notify;
 true

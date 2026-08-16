@@ -11,10 +11,10 @@ git_hash = 0
 [files]
 include = [
     "LICENSE",
+    "mod.cpp",
     "README.md",
 ]
 
 [properties]
 author = "Darojax"
 url = "https://github.com/Darojax/TFAR-Persistence"
-

@@ -1,6 +1,6 @@
 disableSerialization;
 
-private _display = uiNamespace getVariable ["TFARP_nameDisplay", displayNull];
+private _display = uiNamespace getVariable ["TFARP_presetDisplay", displayNull];
 if (isNull _display) exitWith { false };
 
 private _name = ctrlText (_display displayCtrl 9511);
@@ -13,6 +13,6 @@ private _success = if (_mode isEqualTo "rename") then {
 };
 
 if (_success) then {
-    _display closeDisplay 1;
+    call TFARP_fnc_closeNameDialog;
 };
 _success
