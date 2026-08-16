@@ -21,3 +21,4 @@ TFARP_respawnSnapshot = [];
 TFARP_respawnAwaiting = false;
 TFARP_respawnGeneration = 0;
 TFARP_respawnPlayerAdjusted = false;
+TFARP_testFailNextRespawn = false;

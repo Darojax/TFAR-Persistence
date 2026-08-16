@@ -44,3 +44,23 @@ volume, stereo side, additional channel, and speakers.
 
 Capture the client RPT when a case fails. Include the TFAR version, loadout
 script timing, radio class names, and whether the respawn helper intervened.
+
+## Forced respawn-recovery test
+
+The fallback can be tested without modifying TFAR. In the local debug console,
+run the following once before dying:
+
+```sqf
+call TFARP_fnc_armRespawnTest;
+```
+
+Configure recognizable radio settings first, then die and respawn with the same
+radio classes. At the normal verification point the test hook changes the main
+volume of each matching radio, reports that the simulated failure was injected,
+and allows the real recovery helper to detect and repair it. A second message
+must report that respawn recovery corrected the same number of radios. Confirm
+that every pre-death setting—not only volume—is unchanged afterward.
+
+The hook disarms itself immediately after a mismatch is successfully injected.
+If no matching radio is available yet, it remains armed while the normal retry
+window continues. Run the command again for each additional test respawn.

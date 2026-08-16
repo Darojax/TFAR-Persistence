@@ -15,6 +15,13 @@ if (_snapshot isEqualTo []) exitWith {
     false
 };
 
+// Developer test hook: after TFAR has had its normal restoration window,
+// deliberately create a mismatch and let the real verification path repair it.
+// The hook is one-shot and must be armed explicitly for each test respawn.
+if (missionNamespace getVariable ["TFARP_testFailNextRespawn", false]) then {
+    [_snapshot] call TFARP_fnc_injectRespawnTestFailure;
+};
+
 ([_snapshot] call TFARP_fnc_compareSnapshot) params ["_matching", "_mismatching", "_matched", "_total"];
 
 if (_matched < _total && {_attempt < 5}) exitWith {

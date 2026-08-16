@@ -23,6 +23,7 @@ class CfgFunctions {
         class Persistence {
             file = "\z\tfarp\addons\main\functions";
 
+            class armRespawnTest {};
             class captureCurrent {};
             class buildProfileTooltip {};
             class closeNameDialog {};
@@ -31,6 +32,7 @@ class CfgFunctions {
             class getActiveProfile {};
             class getSwBaseClass {};
             class initNameDialog {};
+            class injectRespawnTestFailure {};
             class loadStore {};
             class notify {};
             class openNameDialog {};
