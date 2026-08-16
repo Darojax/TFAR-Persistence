@@ -11,7 +11,7 @@ private _store = call TFARP_fnc_loadStore;
 _store params ["", ["_activeName", "Default", [""]], ["_profiles", [], [[]]]];
 if ((count _profiles) <= 1) exitWith {
     systemChat format [
-        "[TFAR Persistence] '%1' is the last saved radio profile. Create another profile before deleting it.",
+        "[TFAR Radio Settings Save & Restore] '%1' is the last saved radio profile. Create another profile before deleting it.",
         _name
     ];
     false
@@ -19,7 +19,7 @@ if ((count _profiles) <= 1) exitWith {
 
 private _confirmed = [
     format ["Delete the saved radio setup '%1'?", _name],
-    "TFAR Persistence",
+    "TFAR Radio Settings Save & Restore",
     true,
     true
 ] call BIS_fnc_guiMessage;

@@ -1,11 +1,11 @@
-name = "TFAR Persistence"
+name = "TFAR Radio Settings Save & Restore"
 prefix = "tfarp"
 mainprefix = "z"
 
 [version]
 major = 0
-minor = 1
-patch = 1
+minor = 2
+patch = 0
 git_hash = 0
 
 [files]
@@ -17,4 +17,4 @@ include = [
 
 [properties]
 author = "Darojax"
-url = "https://github.com/Darojax/TFAR-Persistence"
+url = "https://github.com/Darojax/TFAR-Radio-Settings-Save-and-Restore"
