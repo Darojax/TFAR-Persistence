@@ -5,12 +5,14 @@ mainprefix = "z"
 [version]
 major = 0
 minor = 2
-patch = 0
+patch = 1
 git_hash = 0
 
 [files]
 include = [
+    "ARTWORK_LICENSE.md",
     "LICENSE",
+    "assets/*_ca.paa",
     "mod.cpp",
     "README.md",
 ]
